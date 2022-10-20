@@ -8,7 +8,7 @@
 
 ### Full Docuemtation Of Client Below!
 
-**Buy Email**
+**Usage Below**
 ```go 
 package main
 
@@ -30,5 +30,19 @@ func main() {
 	// Buys Email Taking 3 arguements, returning mailid and email
 	MailId, Email := client.BuyEmail(emailkey, "Domain", "Target_Url")
 	fmt.Printf("%v | %v\n", MailId, Email) // returns mailid in a string form and email in string form 
+	
+	// Cancels Mail
+	MailID, err := strconv.Atoi(MailId) // Changes MailId from string to int 
+	if err != nil {
+		log.Fatal(err)
+	}
+	response, _ := client.DeleteMail(emailkey, MailID)
+	fmt.Printf("%v\n", response)
 
+	// Get Balance, Takes User's Key as the only arguement
+	Balance := client.GetBalance(emailkey)
+	fmt.Printf("%v\n", Balance)
+
+	Value := client.GetLetter(emailkey, MailID) 
+	fmt.Printf("Value: %v", Value) 
 ```
