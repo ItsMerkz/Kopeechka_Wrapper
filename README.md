@@ -8,7 +8,7 @@
 
 ### Full Docuemtation Of Client Below!
 
-** Buy Email **
+**Buy Email**
 ```go 
 package main
 
