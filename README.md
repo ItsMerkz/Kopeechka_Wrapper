@@ -45,4 +45,5 @@ func main() {
 
 	Value := client.GetLetter(emailkey, MailID) 
 	fmt.Printf("Value: %v", Value) 
+}
 ```
